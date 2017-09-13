@@ -1,0 +1,99 @@
+<%- include("partials/header1",({title:'Dashboard'})) %>
+<%- include("partials/header2",({session:'1'})) %>
+
+
+</header>
+<!--=========Header ends here=======-->
+<section id="homescreen1">
+	<div class="banner-h">
+        <div class="wallet container"><h2><%= username %></h2></div>
+    </div>
+    <div class="wallet-redbg">
+    	<div class="container">
+        	<div class="col-sm-10 col-sm-offset-1 well wallet-ballance">
+            	<div class="row">
+                	<div class="col-sm-6 col-xs-6  text-left blance-img"><i><img src="img/wallet.png" alt="wallet"></i><p><%= mainbal %> CMD</p></div>
+                    <div class="col-sm-6 col-xs-6 text-right banalnce"><p><span>Locked = <%= lockbal %> CMD</span></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    	<div class="col-sm-8 col-sm-offset-2 transaction-detail ">
+        	<h3 class="text-center text-30">Recent Transactions</h3>
+            <ul class="transaction-ul">
+
+
+
+<% 
+try {
+    if (hashes){
+var recent_hashes = hashes
+var temphashes = new Array(); 
+temphashes =  recent_hashes.split(",");
+
+for (var i in temphashes) {
+
+    strvar = temphashes[i]
+    var temphash = new Array(); 
+    temphash = strvar.split(":");
+    hash = temphash[0]
+    amount = temphash[1]
+    fee = temphash[2]
+    
+    // Txn Time
+    var timestamp = temphash[3];
+    var date = new Date(timestamp*1000);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    time = hours + ":" + minutes + ":" + seconds + " " + day + "-" + month + "-" + year
+%>
+                <li class="row">
+                	<div class="col-sm-7">
+                    	<div class="row">
+                            <div class="col-sm-9 transca-by-person">
+                                <p>Fee : <%= fee %></p>
+                                <br>
+                                <p class="bill"><%= hash %></p>
+                                   <% if (temphash[4] == 'true') { %>
+                                <span class=" btn-success decl">Sent</span>
+                                   <% } else if (temphash[4] == 'false') { %>
+                                <span class=" btn-success suc">Received</span>
+                                  <%  } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 text-right right-transc">
+                    	<span class="time"><%= amount %> CMD</span>
+                        <span class="date"><%= time %></span>
+                    </div>
+                </li>
+
+<% } }
+}
+
+catch (e){ %>
+                    <li class="row">
+                	<div class="col-sm-7">
+                    	<div class="row">
+                            <div class="col-sm-9 transca-by-person">
+                                <p>No Transactions Yet</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 text-right right-transc">
+                    </div>
+                </li>
+
+<% } %> 
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<%- include("partials/footer",{session:'1'}) %>

@@ -1,0 +1,14 @@
+<%- include("partials/header",({title:'Passbook',l:'yes'})) %>
+
+<%- include("partials/header2",({S1:'',S2:'',S3:'active'})) %>
+
+
+  <% for(var i=1; i<10; i++) {%>
+
+      <span>
+          Transaction <%= [i] %>
+     <br></span>
+
+  <% } %>
+
+<%- include("partials/footer",{session:'1'}) %>

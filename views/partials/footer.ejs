@@ -1,0 +1,75 @@
+
+<section id="footer-area">
+	<footer>
+    	<div class="container">
+        	<div class="row">
+           		<div class="col-sm-4 logoa-rea col-xs-6">
+                	<img src="img/footer-logo.png" alt="footer-logo"/>
+                    <div class="adres-social">
+                        <a href="#"><img src="img/fb.jpg" alt="fb"/></a>
+                        <a href="#"><img src="img/google.jpg" alt="google"/></a>
+                        <a href="#"><img src="img/twitter.jpg" alt="twitter"/></a>
+                    </div>
+                </div>
+                <div class="col-sm-4 about-footer col-xs-6">
+                    <ul>
+                        <li><a href="http://coinmd.io/termsfeed-html-terms-conditions.aspx" target="_blank">FAQ’s</a></li>	
+                        <li><a href="http://coinmd.io/termsfeed-html-eula.aspx" target="_blank">EULA</a></li>
+                        <li><a href="http://coinmd.io/termsfeed-html-terms-use.aspx" target="_blank">Terms of Use</a></li>
+                        <li><a href="http://coinmd.io/termsfeed-html-return-refund-policy.aspx" target="_blank">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 about-footer information-ar col-xs-6">
+                    <ul>
+                        <% if (session == '0') { %>
+
+                    	<li><a href="#" data-toggle="modal" data-target="#login_modal">Wallet Login</a></li>
+                        <li><a href="http://coinmd.io/MemberToolsDotNet/EnrollmentNew/StartPublicEnrollment.aspx" target="_blank">Wallet SignUp</a></li>
+
+                        <% } else if (session == '1') { %>
+                        <li><a href="/send" >Send</a></li>
+                        <li><a href="/receive" >Receive</a></li>
+                        <li><a href="/profile" >Profile</a></li>
+                        <li><a href="/logout" >Logout</a></li>
+                        <% } %>
+                        <li><a href="https://blocks.coinmd.io" title="Blockchian Explorer" target="_blank">Blocks Explorer</a></li>	
+                    </ul>
+                </div>
+        </div>
+    </footer>
+</section>
+
+<script>
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+	
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+<!--=========JS links start here=======-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+//<script>
+//$(document).ready(function() {
+//    var windowHeight = $(window).height();
+//    $("#banner-area").css("height", windowHeight);
+//    console.log(windowHeight)
+//	$(".bouncing-arrow").on("click", function() {
+//    // alert('dfdg')
+//    $("body,html").animate({scrollTop: windowHeight}, 800);
+//	});
+//});
+//
+//</script>
+
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+
+<!-- JS links ends here -->
+</body>
+</html>

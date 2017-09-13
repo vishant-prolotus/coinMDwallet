@@ -1,0 +1,39 @@
+<%- include("partials/header1",({title:'Receive'})) %>
+<%- include("partials/header2",({session:'1'})) %>
+
+
+</header>
+
+<!--========= header ends here =======-->
+
+<section id="homescreen1">
+	<div class="banner-h">
+        <div class="wallet container"><h2>Receive</h2></div>
+    </div>
+    
+    <div class="container">
+    	<div class="col-sm-8 col-sm-offset-2 well" style="margin-top:22px;">
+        	<form id="send-cmd" >
+               <div class="form-group adres adress-icon-r">
+                <h1><%= username %> [ <%= trim_address %>... ]</h1>
+                <p id="p1" onclick="copyToClipboard('#p1')"><%= address %></p>
+                <script>
+                    function copyToClipboard(element) {
+                        var $temp = $("<input>");
+                        $("body").append($temp);
+                        $temp.val($(element).text()).select();
+                        document.execCommand("copy");
+                        $temp.remove();
+                    }
+                </script>
+               </div>
+            </form>
+            <div class="qr-image">
+            	<p style="margin-bottom:20px; color:#787878;">Ask Sender to Scan & Copy Address from QR</p>
+            <img src="data:image/svg+xml;utf8,<%= qrsvg %>" alt="qr" width="300" height="300" onclick="copyToClipboard('#p1')" title="Address : <%= address %>"/></div>
+        </div>
+    </div>
+   
+</section>
+
+<%- include("partials/footer",{session:'1'}) %>

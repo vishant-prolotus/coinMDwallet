@@ -1,0 +1,116 @@
+<%- include("partials/header1",({title:'CoinMD -'})) %>
+<%- include("partials/header2",({session:'0'})) %>
+
+<!-- Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity:1;"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">WebWallet Login</h4>
+      </div>
+      <div class="modal-body">
+        <form id="login-frm" method="post" action="#">
+  <div class="form-group mobile-icon">
+    <label>Email</label>
+    <input type="email" class="form-control" name="logemail">
+  </div>
+  <div class="form-group lock-icon">
+    <label>Password</label>
+    <input type="password" class="form-control" name="logpassword">
+  </div>
+  
+ <div class="login-btn-area clearfix">
+  <div class="g-recaptcha" data-sitekey="6LeXTysUAAAAAEWEsnXIGoeh3tJza1I8WdT76u6g"></div>
+  <p class="text-right"><button type="submit" class="btn btn-default banner-btn">Log In</button> </p>
+ </div>
+  
+   <div class="form-group forgot-pas">
+    <label class="forgot-pass"><a href="https://coinmd.io/MemberToolsDotNet/Login/FirestormLogin.aspx">Forgot password?</a></label>
+  </div>
+  
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</header>
+
+<section id="banner-area">
+	<div class="banner">
+    	<img src="img/banner.jpg" alt="banner"/>
+     	<div class="container">
+        	<div class="banner-content">
+                <h2><%= loginerr %></h2>
+                <p>CoinMD, Inc. is a private membership network designed to make healthcare more affordable. 
+                  Linking world-class healthcare providers with an active pool of consumers, CoinMD uses the buying 
+                  power of the network to negotiate deals that lower costs for members. 
+                  The network also enables members to earn CoinRewards by making insurance payments on time, 
+                  using in-network health and wellness providers, and sharing CoinMD with other people.
+                  CoinMD uses a new cryptocurrency powered by a secure blockchain and designed to gain value over time, 
+                  instead of losing value like national currencies. Anyone of any age—seniors, Baby Boomers, 
+                  Generation Xers, or Millennials—can join CoinMD to benefit from lower costs today and a more secure retirement tomorrow.
+                  <p>
+               <!--  <button class="btn btn-default banner-btn">Read More</button> -->
+            </div>
+        </div>
+    	<span class="bouncing-arrow"><img src="img/bouncing-arrow.png" alt="arrow-down" title="Scroll Down To Get More"/></span>
+    </div>
+</section>
+
+<section id="whychose-sec">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-sm-12 why-chose-heading"><h2 class="text-center">Why Choose <span>CoinMD</span></h2></div>
+            <div class="col-sm-4">
+            	
+              <div class="media">
+              <div class="media-left media-middle">
+                <img src="img/security.png" class="media-object" style="width:60px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Secure Storage</h4>
+                <p>We store the vast majority of the digital assets in secure offline storage.</p>
+              </div>
+            </div>
+                
+            </div>
+            <div class="col-sm-4">
+            	<div class="media">
+              <div class="media-left media-middle">
+                <img src="img/fast.png" class="media-object" style="width:60px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Fast and Easy</h4>
+                <p>It is very easy and fast for our user to send and receive CMD's Instantly</p>
+              </div>
+            </div>
+            </div>
+            <div class="col-sm-4">
+            	<div class="media">
+              <div class="media-left media-middle">
+                <img src="img/scan.png" class="media-object" style="width:60px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Public Ledger</h4>
+                <p>Unlinkable transactions with mining support.</p>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="getstrated-area">
+	<div class="container">
+    	<div class="col-sm-12">
+        	<h4 class="text-center">Open account for free and receive CMD now! </h4>
+            <p class="text-center"><a href="http://www.coinmd.io/MemberToolsDotNet/EnrollmentNew/StartPublicEnrollment.aspx?referringDealerID=0" class="btn started-btn">Get Started</a></p>
+        </div>
+    </div>
+</section>
+
+
+
+<%- include("partials/footer",{session:'0'}) %>

@@ -1,0 +1,49 @@
+<%- include("partials/header1",({title:'Send'})) %>
+<%- include("partials/header2",({session:'1'})) %>
+    
+</header>
+<!--=========Header Ends Here=======-->
+
+<section id="homescreen1">
+	<div class="banner-h">
+    <% if (status) { %>
+        <div class="wallet container"><h2><%= 'Balance : '+mainbal+' CMD ( '+status+' )' %></h2>
+    <% } else { %>
+        <div class="wallet container"><h2><%= 'Balance : '+mainbal+' CMD' %></h2>
+    <% } %>
+
+<%if (tx_hash) {%>
+        <h3>Last Transaction : <%= tx_hash %></h3>
+<% } %>
+
+    </div>
+    </div>
+
+    <div class="container">
+    	<div class="col-sm-8 col-sm-offset-2 well" style="margin-top:22px;">
+        	<form id="send-cmd" method="post" action="#">
+              <div class="form-group amount">
+                <label>Transfer Amount (in CMD)</label>
+                <input type="text" class="form-control" placeholder="Should be Less Than <%= mainbal %>" name="s_amt">
+              </div>
+               <div class="form-group adres adress-icon-r">
+                <label for="exampleInputEmail1">Receiver Crypto Address</label>
+                <input type="text" class="form-control" name="s_add" placeholder="DeStInAtIoNwAlLeTaDdReSs ≥ 97 letters">
+              </div>
+            <!--  <div class="form-group email">
+                <label for="exampleInputEmail1">or Receiver Email (Feature Coming Soon)</label>
+                <input type="email" class="form-control" name="s_eml"placeholder="destination@example.com">
+              </div> -->
+              <div class="form-group fees">
+                <label>Fees (in CMD)</label>
+                <input type="text" class="form-control" name="s_fee" placeholder="<%= 1/100 %>">
+              </div>
+
+              <button type="submit" class="btn banner-btn left-space">Send</button>
+            </form>
+        </div>
+    </div>
+   
+</section>
+
+<%- include("partials/footer",{session:'1'}) %>
