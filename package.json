@@ -1,12 +1,11 @@
 {
-  "name": "coinmd.wallet.web",
+  "name": "coinmd",
   "version": "1.0.0",
   "description": "Web Wallet For CoinMd",
   "main": "app.js",
   "scripts": {
     "test": "node app.js"
   },
-  "author": "Abhis27.Github.Io",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^1.0.2",
